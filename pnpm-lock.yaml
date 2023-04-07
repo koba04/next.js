@@ -36,7 +36,7 @@ importers:
       '@svgr/webpack': 5.5.0
       '@swc/cli': 0.1.55
       '@swc/core': 1.2.203
-      '@swc/helpers': 0.4.14
+      '@swc/helpers': 0.5.0
       '@testing-library/react': 13.0.0
       '@types/cheerio': 0.22.16
       '@types/fs-extra': 8.1.0
@@ -221,7 +221,7 @@ importers:
       '@svgr/webpack': 5.5.0
       '@swc/cli': 0.1.55_@swc+core@1.2.203
       '@swc/core': 1.2.203
-      '@swc/helpers': 0.4.14
+      '@swc/helpers': 0.5.0
       '@testing-library/react': 13.0.0_biqbaboplfbrettd7655fr4n2y
       '@types/cheerio': 0.22.16
       '@types/fs-extra': 8.1.0
@@ -542,7 +542,7 @@ importers:
       '@next/swc': 13.3.1-canary.7
       '@opentelemetry/api': 1.4.1
       '@segment/ajv-human-errors': 2.1.2
-      '@swc/helpers': 0.4.14
+      '@swc/helpers': 0.5.0
       '@taskr/clear': 1.1.0
       '@taskr/esnext': 1.1.0
       '@types/amphtml-validator': 1.0.0
@@ -716,7 +716,7 @@ importers:
       zod: 3.21.4
     dependencies:
       '@next/env': link:../next-env
-      '@swc/helpers': 0.4.14
+      '@swc/helpers': 0.5.0
       busboy: 1.6.0
       caniuse-lite: 1.0.30001406
       fibers: 5.0.3
@@ -6773,8 +6773,8 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@swc/helpers/0.4.14:
-    resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
+  /@swc/helpers/0.5.0:
+    resolution: {integrity: sha512-SjY/p4MmECVVEWspzSRpQEM3sjR17sP8PbGxELWrT+YZMBfiUyt1MRUNjMV23zohwlG2HYtCQOsCwsTHguXkyg==}
     dependencies:
       tslib: 2.4.0
 
