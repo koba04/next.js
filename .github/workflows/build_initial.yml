@@ -1,0 +1,39 @@
+name: Build Initial
+
+on:
+  push:
+    branches: ['ijjk/update-ci-workflow']
+
+env:
+  NAPI_CLI_VERSION: 2.14.7
+  TURBO_VERSION: 1.6.3
+  RUST_TOOLCHAIN: nightly-2023-03-09
+  PNPM_VERSION: 7.24.3
+  NODE_MAINTENANCE_VERSION: 16
+  NODE_LTS_VERSION: 18
+  TEST_CONCURRENCY: 8
+  # TODO: remove after testing
+  NEXT_TEST_CONTINUE_ON_ERROR: 'true'
+
+jobs:
+  build-initial:
+    runs-on: self-hosted-arm64-linux
+
+    env:
+      TURBO_TEAM: 'vercel'
+      TURBO_REMOTE_ONLY: 'true'
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      NEXT_TELEMETRY_DISABLED: 1
+      # we build a dev binary for use in CI so skip downloading
+      # canary next-swc binaries in the monorepo
+      NEXT_SKIP_NATIVE_POSTINSTALL: 1
+
+    name: 'Build Initial'
+    secrets: inherit
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 25
+
+      - uses: ./.github/workflows/build_reusable.yml
