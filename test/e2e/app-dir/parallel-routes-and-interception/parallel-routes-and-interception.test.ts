@@ -255,6 +255,27 @@ createNextDescribe(
         // check that we didn't scroll back to the top
         await check(() => browser.eval('window.scrollY'), position)
       })
+
+      it('should navigate with a link with prefetch=false', async () => {
+        const browser = await next.browser('/parallel-prefetch-false')
+
+        // check if the default view loads
+        await check(
+          () => browser.waitForElementByCss('#default-parallel').text(),
+          'default view for parallel'
+        )
+
+        // check that navigating to /foo re-renders the layout to display @parallel/foo
+        await check(
+          () =>
+            browser
+              .elementByCss('[href="/parallel-prefetch-false/foo"]')
+              .click()
+              .waitForElementByCss('#parallel-foo')
+              .text(),
+          'parallel for foo'
+        )
+      })
     })
 
     describe('route intercepting', () => {
